@@ -13,15 +13,24 @@
   }
 }
 
+.poster-background {
+  background-color: whitesmoke;
+  border-radius: 25px;
+  padding: 2.5%;
+}
+
+.userName {
+  margin: 2.5%;
+}
+
 .App-header {
-  background-color: #282c34;
+  background-color: white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .App-link {
