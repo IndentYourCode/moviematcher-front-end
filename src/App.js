@@ -22,6 +22,11 @@ function App() {
       username: document.getElementById('username').value,
       yesMovie: data[index].id,
     }
+    let resp = await fetch('http://localhost:3001/updateUserData', {
+      method: 'POST',
+      body: body,
+    });
+
     console.log(body);
     if(!((index+1) % 20)) {
       setPage(page+1);
