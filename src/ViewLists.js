@@ -9,10 +9,12 @@ function ViewLists() {
 
     const submit = async () => {
         console.log('clcicked');
-        //let resp = await fetch('http://localhost:3001/getcommon');
-        //let result = await resp.json();
 
-        let result = [550];
+        let u1 = document.getElementById(username1).value;
+        let u2 = document.getElementById(username2).value;
+
+        let resp = await fetch('http://localhost:3001/getCommonMovies'+u1+'/'+u2);
+        let result = await resp.json();
 
         let temp = [];
         for(let i = 0;  i < result.length; i++){
