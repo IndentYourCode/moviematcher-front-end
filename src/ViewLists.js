@@ -10,10 +10,16 @@ function ViewLists() {
     const submit = async () => {
         console.log('clcicked');
 
-        let u1 = document.getElementById(username1).value;
-        let u2 = document.getElementById(username2).value;
+        let u1 = document.getElementById('username1').value;
+        let u2 = document.getElementById('username2').value;
 
-        let resp = await fetch('http://localhost:3001/getCommonMovies'+u1+'/'+u2);
+        let resp = await fetch('http://localhost:3001/getCommonMovies'+u1+'/'+u2, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': 'http://localhost:3001',
+                'Access-Control-Allow-Methods': 'PUT, GET'
+              },
+        });
         let result = await resp.json();
 
         let temp = [];

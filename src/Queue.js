@@ -24,7 +24,11 @@ function Queue() {
     }
     let resp = await fetch('http://localhost:3001/updateUserData', {
       method: 'POST',
-
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': 'http://localhost:3001',
+        'Access-Control-Allow-Methods': 'PUT, GET'
+      },
       body: JSON.stringify(body),
     });
 
