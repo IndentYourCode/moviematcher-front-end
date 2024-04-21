@@ -45,6 +45,15 @@ function Queue() {
       username: document.getElementById('username').value,
       noMovie: data[index].id
     }
+    let resp = await fetch('http://localhost:3001/updateUserData', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': 'http://localhost:3001',
+        'Access-Control-Allow-Methods': 'PUT, GET'
+      },
+      body: JSON.stringify(body),
+    });
     console.log(body);
     if(!((index+1)%20)) {
       setPage(page+1);
